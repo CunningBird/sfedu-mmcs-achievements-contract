@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+package com.cunningbird.sfedu.mmcs;
+
+message profileRequest {
+  string id = 1; // UUID
+}
+
+message profileResponse {
+  string firstName = 1;
+  string lastName = 2;
+  string middleName = 3;
+
+  string status = 4;
+
+  string educationGroup = 5;
+  string educationCourse = 6;
+  string directionOfEducation = 7; // ПМИ, ФИИТ, и т.д.
+  string startOfEducation = 8;
+  string endOfEducation = 9;
+}
+
+service HelloService {
+  rpc profile(profileRequest) returns (profileResponse);
+}
